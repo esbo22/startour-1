@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :ships, dependent: :destroy # => OWNER
+  has_many :ships, dependent: :destroy, foreign_key: :owner_id # => OWNER
   has_many :bookings # => RENTER
 
   has_many :owner_bookings, through: :ships, source: :bookings # => OWNER
