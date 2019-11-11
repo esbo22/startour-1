@@ -1,2 +1,22 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'starwars.jpg' %>');">
+  <div class="banner-content">
+    <h1>StarTour</h1>
+    <p>Location de vaisseau</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @ships.each do |ship| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'starwars.jpg' %>');">
+          <div class="card-description">
+            <h2><%= ship.model %></h2>
+          </div>
+          <%= link_to "", ship_path(ship), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
