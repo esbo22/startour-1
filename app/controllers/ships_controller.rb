@@ -2,7 +2,7 @@
 
 class ShipsController < ApplicationController
   before_action :set_ship, only: [:show]
-  skip_before_action :authenticate_user!, only: %i[new index]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @ships = Ship.all
