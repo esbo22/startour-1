@@ -23,14 +23,17 @@ daph.save!
 
 pod = Ship.new(photo: url_ship, model: "Pod-Racer", price_per_day: 60, capacity_max: 1, address: "Chez Daphnée, Caen")
 pod.owner = daph
+pod.remote_photo_url = url_ship
 pod.save!
 
 #JOHNNY
 johnny = User.new(email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
 johnny.save!
 
+
 x_wing_2 = Ship.new(photo: url_ship, model: "X-Wing", capacity_max: 1, description: "Rebellion starfighter", price_per_day: 100, captain: true, address: "Lannion, France")
 x_wing_2.owner = johnny
+x_wing_2.remote_photo_url = url_ship
 x_wing_2.save!
 
 #YANN
@@ -39,6 +42,7 @@ yann.save!
 
 tie_bomb = Ship.new(photo: url_ship, model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
 tie_bomb.owner = yann
+tie_bomb.remote_photo_url = url_ship
 tie_bomb.save!
 
 
