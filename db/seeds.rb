@@ -18,7 +18,7 @@ url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx
 url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
 
 #DAPHNEE
-daph = User.new(email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
+daph = User.new(bio: "daph", email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
 daph.save!
 
 pod = Ship.new(photo: url_ship, model: "Pod-Racer", price_per_day: 60, capacity_max: 1, address: "Chez Daphnée, Caen")
@@ -27,7 +27,7 @@ pod.remote_photo_url = url_ship
 pod.save!
 
 #JOHNNY
-johnny = User.new(email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
+johnny = User.new(bio: "johnny", email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
 johnny.save!
 
 
@@ -37,15 +37,13 @@ x_wing_2.remote_photo_url = url_ship
 x_wing_2.save!
 
 #YANN
-yann = User.new(email: "yann@example.com", password: "password", first_name: "Yann", last_name: "Ropert")
+yann = User.new(bio: "yann",email: "yann@example.com", password: "password", first_name: "Yann", last_name: "Ropert")
 yann.save!
 
 tie_bomb = Ship.new(photo: url_ship, model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
 tie_bomb.owner = yann
 tie_bomb.remote_photo_url = url_ship
 tie_bomb.save!
-
-
 
 
 puts "Create users"
