@@ -1,0 +1,306 @@
+<style>
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+* { padding: 0; margin: 0; }
+
+body, html
+{
+  width: 100%;
+  height: 100%;
+  font-family: "Droid Sans", arial, verdana, sans-serif;
+  font-weight: 700;
+  color: #ff6;
+  background-color: #000;
+  overflow: hidden;
+}
+
+p#start
+{
+  position: relative;
+  width: 16em;
+  font-size: 200%;
+  font-weight: 500;
+  margin: 20% auto;
+  color: #4ee;
+  opacity: 0;
+  z-index: 1;
+  -webkit-animation: intro 3s ease-out;
+  -moz-animation: intro 3s ease-out;
+  -ms-animation: intro 3s ease-out;
+  -o-animation: intro 3s ease-out;
+  animation: intro 3s ease-out;
+}
+
+@-webkit-keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-ms-keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-o-keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+h1
+{
+  position: absolute;
+  width: 2.6em;
+  left: 50%;
+  top: 25%;
+  font-size: 10em;
+  text-align: center;
+  margin-left: -1.3em;
+  line-height: 0.8em;
+  letter-spacing: -0.05em;
+  color: #000;
+  text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+  opacity: 0;
+  z-index: 1;
+  -webkit-animation: logo 5s ease-out 2.5s;
+  -moz-animation: logo 5s ease-out 2.5s;
+  -ms-animation: logo 5s ease-out 2.5s;
+  -o-animation: logo 5s ease-out 2.5s;
+  animation: logo 5s ease-out 2.5s;
+}
+
+h1 sub
+{
+  display: block;
+  font-size: 0.3em;
+  letter-spacing: 0;
+  line-height: 0.8em;
+}
+
+@-webkit-keyframes logo {
+  0% { -webkit-transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { -webkit-transform: scale(0.1); opacity: 0; }
+}
+
+@-moz-keyframes logo {
+  0% { -moz-transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { -moz-transform: scale(0.1); opacity: 0; }
+}
+
+@-ms-keyframes logo {
+  0% { -ms-transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { -ms-transform: scale(0.1); opacity: 0; }
+}
+
+@-o-keyframes logo {
+  0% { -o-transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { -o-transform: scale(0.1); opacity: 0; }
+}
+
+@keyframes logo {
+  0% { transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(0.1); opacity: 0; }
+}
+
+/* the interesting 3D scrolling stuff */
+#titles
+{
+  position: absolute;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: perspective(300px) rotateX(25deg);
+  -moz-transform: perspective(300px) rotateX(25deg);
+  -ms-transform: perspective(300px) rotateX(25deg);
+  -o-transform: perspective(300px) rotateX(25deg);
+  transform: perspective(300px) rotateX(25deg);
+}
+
+#titles:after
+{
+  position: absolute;
+  content: ' ';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 60%;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+#titles p
+{
+  text-align: justify;
+  margin: 0.8em 0;
+}
+
+#titles p.center
+{
+  text-align: center;
+}
+
+#titles a
+{
+  color: #ff6;
+  text-decoration: underline;
+}
+
+#titlecontent
+{
+  position: absolute;
+  top: 100%;
+  -webkit-animation: scroll 100s linear 4s infinite;
+  -moz-animation: scroll 100s linear 4s infinite;
+  -ms-animation: scroll 100s linear 4s infinite;
+  -o-animation: scroll 100s linear 4s infinite;
+  animation: scroll 100s linear 4s infinite;
+}
+
+/* animation */
+@-webkit-keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@-moz-keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@-ms-keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@-o-keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+</style>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.movie-object-reproduction.com/Files/17627/Img/07/CasqueLukeSkywalkerPilotRebelHelmet308-zoom.jpg" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner" style="">
+  <div class="banner-content">
+    <h1></h1>
+    <body cz-shortcut-listen="true">
+
+<p id="start">Il y a peu de temps, dans un navigateur très, très proche....
+des developpeurs du wagon</p>
+
+
+<div id="titles"><div id="titlecontent">
+
+  <p class="center">EPISODE 314<br>ALL YOU NEED IS CODE</p>
+  <p>STAR TOUR</p>
+
+  <p>C'est une période de guerre pour des vendeurs.</p>
+
+  <p>Il s'agit d'un style Star Wars qui fait défiler les titres 3D en CSS3. Il est possible qu'il n'ait aucun but pratique, mais il a l'air génial \o/</p>
+
+  <p>Avant que les cinéphiles ne se mettent à fulminer, je me rends compte que Star Wars n'a pas été le premier à utiliser des titres 3D rampants, mais peu d'entre vous se souviendront de la série Flash Gordon ou de l'adaptation en 1936 de "Things to Come" de HG Wells.</p>
+
+  <p>Aussi, en mentionnant "Star Wars", tout le monde comprendra ce que je veux dire. Et je recevrai plusieurs milliers de visites supplémentaires.
+  donc plus de location de vaisseau.</p>
+
+  <p>Les titres déroulants fonctionnent bien dans Chrome, Safari et Firefox. Opera n'implémente pas encore de transformations 3D, mais le texte défilera. Les utilisateurs d'IE reçoivent une page blanche. C'est dommage, mais IE10 devrait le supporter...
+  un jour....</p>
+
+  <p>Tout le code est contenu dans ce fichier HTML unique.........
+Je sais que c'est mal.........
+mais c'est un exercice alors on test tout \o/
+
+  </p><p class="center">Regarde le code source, Luke !</p>
+
+  <p>Désolée. Je n'ai pas pu résister.</p>
+
+  <p class="center"><a href="http://www.lewagon.com/">lewagon.com/<br></a></p>
+
+  <p>allez sur github <a href="http://github.com/esbo22">@esbo22</a> – J'adorerais voir comment vous utilisez à votre tour !</p>
+
+  <p>Enfin, les films originaux, non falsifiés, restent les meilleurs. Arrête de les tripoter !</p>
+
+</div></div>
+
+
+</body>
+    <a class="btn btn-flat" href="#">Insciption</a>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @ships.each do |ship| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'starwars.jpg' %>');">
+          <div class="card-description">
+            <h2><%= ship.model %></h2>
+          </div>
+          <%= link_to "", ship_path(ship), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
