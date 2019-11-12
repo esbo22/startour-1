@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  has_many :ships, dependent: :destroy # => OWNER
+  has_many :ships, dependent: :destroy, foreign_key: :owner_id # => OWNER
   has_many :bookings # => RENTER
 
   has_many :owner_bookings, through: :ships, source: :bookings # => OWNER
+  # has_many :booked_ships, through: :bookings # => RENTER
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -12,5 +13,5 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :bio, presence: true
-  validates :avatar, presence: true
+  mount_uploader :avatar, PhotoUploader
 end
