@@ -54,7 +54,7 @@ end
 20.times do
  ship = Ship.new(
    model: Faker::Vehicle.model,
-   capacity_max: 1..5
+   capacity_max: 1..5,
    address: Faker::Address.street_address,
    description: Faker::Lorem.paragraph,
    price_per_day: Faker::Number.between(from: 20, to: 200),
