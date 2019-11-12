@@ -1,3 +1,6 @@
+require 'faker'
+require 'open-uri'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -28,3 +31,45 @@ yann.save
 tie_bomb = Ship.new(model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
 tie_bomb.owner = yann
 tie_bomb.save
+
+
+status = ["Pending user request", "Pending owner validation", "Confirmed", "Canceled"]
+url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx1sl.png"
+url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
+puts "Destroy all instances"
+Booking.destroy_all if Rails.env.development?
+
+puts "Create users"
+20.times do
+ user = User.new(
+   first_name: Faker::Name.unique.first_name,
+   last_name: Faker::Name.unique.last_name,
+   email: Faker::Internet.email,
+   password: Faker::Internet.password,
+   bio: Faker::Lorem.paragraph,
+   )
+ user.remote_avatar_url = url_avatar
+ user.save
+end
+20.times do
+ ship = Ship.new(
+   model: Faker::Nation.capital_city,
+   capacity_max: 1..5
+   address: Faker::Address.street_address,
+   description: Faker::Lorem.paragraph,
+   price_per_day: Faker::Number.between(from: 20, to: 200),
+   owner: User.all.sample
+   )
+ ship.remote_photo_url = url_ship
+ ship.save
+end
+20.times do
+ Booking.create(
+   start_date: Date.today,
+   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+   status: status.sample,
+   total_price: Faker::Number.between(from: 20, to: 200),
+   ship: Ship.all.sample,
+   number_of_guests: User.all.sample
+   )
+end
