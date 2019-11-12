@@ -53,7 +53,7 @@ puts "Create users"
 end
 20.times do
  ship = Ship.new(
-   model: Faker::Nation.capital_city,
+   model: Faker::Vehicle.model,
    capacity_max: 1..5
    address: Faker::Address.street_address,
    description: Faker::Lorem.paragraph,
