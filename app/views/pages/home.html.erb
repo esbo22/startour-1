@@ -4,26 +4,38 @@
 <div class="banner" style="background-image: url('https://www.rustica.fr/images/ciel-etoile-l750-h512.jpg');">
   <div class="banner-content">
     <h1>Rental your ship</h1>
-   <div class="col-md-12 text-center" >
-
-    <a class="btn btn-gradient" href="#">Insciption</a>
-</div>
+    <div class="col-md-12 text-center" >
+      <a class="btn btn-gradient" href="/users/sign_up">Insciption</a>
+    </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <% @ships.each do |ship| %>
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'starwars.jpg' %>');">
-          <div class="card-description">
-            <h2><%= ship.model %></h2>
+        <div class="card-trip">
+          <%= cl_image_tag ship.photo, height: 300, width: 400, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2>model</h2>
+              <p><%= ship['model'] %></p>
+              <p>address</p>
+              <p><%= ship['address'] %></p>
+            </div>
+            <h2 class="card-trip-pricing">
+              <p><%= ship['price_per_day'] %> credits</p>
+            </h2>
+            <img src="" class="card-trip-user avatar-bordered" />
           </div>
-          <%= link_to "", ship_path(ship), class: 'card-link' %>
         </div>
+
+        <%= link_to "", ship_path(ship), class: 'card-link' %>
       </div>
     <% end %>
   </div>
 </div>
+
+
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
@@ -36,4 +48,3 @@
     I <i class="fas fa-heart"></i> Le Wagon
   </div>
 </div>
-
