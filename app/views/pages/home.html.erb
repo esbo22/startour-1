@@ -5,7 +5,7 @@
   <div class="banner-content">
     <h1>Rental your ship</h1>
     <div class="col-md-12 text-center" >
-      <a class="btn btn-gradient" href="#">Insciption</a>
+      <a class="btn btn-gradient" href="/users/sign_up">Insciption</a>
     </div>
   </div>
 </div>
@@ -14,16 +14,16 @@
     <% @ships.each do |ship| %>
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%= cl_image_tag ship.photo, height: 300, width: 400, crop: :fill %>
           <div class="card-trip-infos">
             <div>
               <h2>model</h2>
               <p><%= ship['model'] %></p>
-              <p>description</p>
-              <p><%= ship['description'] %></p>
+              <p>address</p>
+              <p><%= ship['address'] %></p>
             </div>
             <h2 class="card-trip-pricing">
-              <p><%= ship['price_per_day'] %>crédit</p>
+              <p><%= ship['price_per_day'] %> credits</p>
             </h2>
             <img src="" class="card-trip-user avatar-bordered" />
           </div>
