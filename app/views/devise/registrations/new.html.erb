@@ -1,13 +1,14 @@
-<div class= "container">
+<div class= "container" style="background-image: url('https://www.rustica.fr/images/ciel-etoile-l750-h512.jpg');">
   <div class= "text-center">
-    <h2>Sign up</h2>
-
+    <div class= "form-grey">
+      <h2>Sign up</h2>
+    </div>
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 
-          <div class="form-inputs">
+          <div class="form-inputs form-grey">
             <%= f.input :last_name %>
             <%= f.input :first_name %>
             <%= f.input :bio %>
@@ -27,12 +28,11 @@
 
           <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-ghost"%>
+            <%= render  "devise/shared/links"%>
           </div>
         <% end %>
 
       </div>
     </div>
-
-    <%= render "devise/shared/links"%>
   </div>
 </div>
