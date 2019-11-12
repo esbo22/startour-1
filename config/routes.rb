@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'ships#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users
 
-  resources :ships, only: [:new, :create, :index, :show] do
+  resources :ships, only: [:new, :create, :show] do
     resources :bookings, only: [:new, :create]
   end
 
