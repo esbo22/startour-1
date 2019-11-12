@@ -3,15 +3,16 @@
 
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif", "Droid Sans Regular";
+$body-font: "Open Sans", "Helvetica", "sans-serif", "Droid Sans Regular", "StarJedi";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
+//   font-family: "StarJedi";
+//   src: font-url('StarJedi-DGRW.eot');
+//   src: font-url('StarJedi-DGRW.eot?#iefix') format('embedded-opentype'),
+//        font-url('StarJedi-DGRW.woff') format('woff'),
+//        font-url('StarJedi-DGRW.ttf') format('truetype')
 // }
-// $my-font: "Font Name";
+// $my-font: "StarJedi";
+@font-face {font-family: "Star Jedi Hollow"; src: url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.eot"); src: url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.woff") format("woff"), url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/dcb5cf864bdbede594c7d31a204dee8d.svg#Star Jedi Hollow") format("svg"); }
