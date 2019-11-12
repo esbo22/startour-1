@@ -13,34 +13,39 @@ Booking.destroy_all if Rails.env.development?
 Ship.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
+status = ["pending", "confirmed", "canceled"]
+url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx1sl.png"
+url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
+
 #DAPHNEE
 daph = User.new(email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
 daph.save!
 
-pod = Ship.new(model: "Pod-Racer", price_per_day: 60, capacity_max: 1, address: "Chez Daphnée, Caen")
+pod = Ship.new(photo: url_ship, model: "Pod-Racer", price_per_day: 60, capacity_max: 1, address: "Chez Daphnée, Caen")
 pod.owner = daph
+pod.remote_photo_url = url_ship
 pod.save!
 
 #JOHNNY
 johnny = User.new(email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
 johnny.save!
 
-x_wing_2 = Ship.new(model: "X-Wing", capacity_max: 1, description: "Rebellion starfighter", price_per_day: 100, captain: true, address: "Lannion, France")
+
+x_wing_2 = Ship.new(photo: url_ship, model: "X-Wing", capacity_max: 1, description: "Rebellion starfighter", price_per_day: 100, captain: true, address: "Lannion, France")
 x_wing_2.owner = johnny
+x_wing_2.remote_photo_url = url_ship
 x_wing_2.save!
 
 #YANN
 yann = User.new(email: "yann@example.com", password: "password", first_name: "Yann", last_name: "Ropert")
 yann.save!
 
-tie_bomb = Ship.new(model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
+tie_bomb = Ship.new(photo: url_ship, model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
 tie_bomb.owner = yann
+tie_bomb.remote_photo_url = url_ship
 tie_bomb.save!
 
 
-status = ["pending", "confirmed", "canceled"]
-url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx1sl.png"
-url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
 
 
 puts "Create users"
