@@ -1,11 +1,11 @@
-// Specific CSS for your home-page
-.banner {
-  background-size: cover;
+
+#ship-show-banner  {
+   background-size: cover;
   background-position: center;
   padding: 150px 0;
 }
 
-.banner h1 {
+#ship-show-banner h1 {
   margin: 10;
   color: #4ee;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -16,14 +16,14 @@
   margin-left: 10px;
 }
 
-.banner p {
+#ship-show-banner p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
 }
 
-body {
-background-image: url("https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
- }
-
+#ship-show-banner .btn {
+  margin-top: 20px;
+}

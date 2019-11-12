@@ -1,8 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ship.photo %>);">
-  <div class="container">
+<div id="ship-show-banner" class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ship.photo %>);">
     <h1><%= @ship.model %></h1>
-    <%= link_to "Add a ship", new_ship_path, class: "btn btn-flat" %>
-  </div>
+    <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
 </div>
 
 
@@ -20,17 +18,23 @@
 
       <div class="col-xs-12 col-sm-6">
         <div class="wagoncard showmaincard form-grey">
-            <div class="wagoncard-category"> Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong> </div>
+            <div class="wagoncard-category">
+              Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong>
+            </div>
             <div class="wagoncard-detail">
               <p> Ship Description: <strong> <%= @ship.description %> </strong> </p>
               <p> Price Per Day: <strong> <%= @ship.price_per_day %> </strong> </p>
-               <p> Ship Address:<strong> <%= @ship.address %> </strong> </p>
+              <p> Ship Address:<strong> <%= @ship.address %> </strong> </p>
               <p> Ship Model: <strong> <%= @ship.model %> </strong> </p>
-               <p> Max Capacity:<strong> <%= @ship.capacity_max %> </strong> </p>
+              <p> Max Capacity:<strong> <%= @ship.capacity_max %> </strong> </p>
+              <br>
+              <br>
+            </div>
            <!--  </div>
           <%#= cl_image_tag @ship.owner.photo.path, width: 50, height: 50 %>
-        </div> -->
+          </div> -->
+        </div>
       </div>
     </div>
   </div>
-
+</div>
