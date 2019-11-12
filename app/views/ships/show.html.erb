@@ -1,3 +1,10 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ship.photo %>);">
+  <div class="container">
+    <h1><%= @ship.model %></h1>
+    <%= link_to "Add a ship", new_ship_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
 
 <h1><%= @ship.model %></h1>
 
@@ -12,7 +19,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-6">
-        <div class="wagoncard showmaincard">
+        <div class="wagoncard showmaincard form-grey">
             <div class="wagoncard-category"> Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong> </div>
             <div class="wagoncard-detail">
               <p> Ship Description: <strong> <%= @ship.description %> </strong> </p>
@@ -26,3 +33,4 @@
       </div>
     </div>
   </div>
+
