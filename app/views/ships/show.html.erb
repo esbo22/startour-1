@@ -1,0 +1,28 @@
+
+<h1><%= @ship.model %></h1>
+
+<div class="container">
+
+  <div class="row">
+    <div class ="photo-row">
+      <div class="col-xs-12 col-sm-6">
+       <!--  <div class="card showmaincard"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path @ship.photo.path, height: 300, width: 400, crop: :fill %>')">
+        </div> -->
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="wagoncard showmaincard">
+            <div class="wagoncard-category"> Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong> </div>
+            <div class="wagoncard-detail">
+              <p> Ship Description: <strong> <%= @ship.description %> </strong> </p>
+              <p> Price Per Day: <strong> <%= @ship.price_per_day %> </strong> </p>
+               <p> Ship Address:<strong> <%= @ship.address %> </strong> </p>
+              <p> Ship Model: <strong> <%= @ship.model %> </strong> </p>
+               <p> Max Capacity:<strong> <%= @ship.capacity_max %> </strong> </p>
+           <!--  </div>
+          <%#= cl_image_tag @ship.owner.photo.path, width: 50, height: 50 %>
+        </div> -->
+      </div>
+    </div>
+  </div>
