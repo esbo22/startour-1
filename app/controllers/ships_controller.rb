@@ -32,7 +32,7 @@ class ShipsController < ApplicationController
   private
 
   def ship_params
-    params.require(:ship).permit(:address, :model, :photo, :price_per_day, :description, :photo, :captain, :capacity_max, :breakfast)
+    params.require(:ship).permit(:captain, :address, :model, :photo, :price_per_day, :description, :photo, :capacity_max)
   end
 
   def set_ship
