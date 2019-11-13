@@ -2,12 +2,10 @@
     <h1><%= @ship.model %></h1>
     <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
 </div>
-
-
-<h1><%= @ship.model %></h1>
+<br>
+<br>
 
 <div class="container">
-
   <div class="row">
     <div class ="photo-row">
       <div class="col-xs-12 col-sm-6">
@@ -21,12 +19,13 @@
             <div class="wagoncard-category">
               Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong>
             </div>
+            <br>
             <div class="wagoncard-detail">
-              <p> Ship Description: <strong> <%= @ship.description %> </strong> </p>
-              <p> Price Per Day: <strong> <%= @ship.price_per_day %> </strong> </p>
-              <p> Ship Address:<strong> <%= @ship.address %> </strong> </p>
+              <p> Ship Description: <strong> <%= @ship.description %> </strong></p>
+              <p> Credits/day: <strong> <%= @ship.price_per_day %> </strong></p>
+              <p> Ship Address:<strong> <%= @ship.address %> </strong></p>
               <p> Ship Model: <strong> <%= @ship.model %> </strong> </p>
-              <p> Max Capacity:<strong> <%= @ship.capacity_max %> </strong> </p>
+              <p> Max Capacity:<strong> <%= @ship.capacity_max %></strong></p>
               <br>
               <br>
             </div>
