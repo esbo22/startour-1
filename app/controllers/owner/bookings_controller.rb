@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
   def index
-    @ships = current_user.ships
+    @bookings = Booking.joins(:ship).where(ships: { owner: current_user })
   end
 
   def accept
