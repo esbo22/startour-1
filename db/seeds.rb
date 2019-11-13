@@ -14,6 +14,8 @@ Ship.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
 status = ["pending", "confirmed", "canceled"]
+url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx1sl.png"
+url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
 
 #DAPHNEE
 daph = User.new(avatar: "https://res.cloudinary.com/yannr/image/upload/v1573647304/IMG_7636_tc5qig.jpg", bio: "daph", email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
@@ -42,6 +44,11 @@ tie_bomb = Ship.new(model: "Tie Bomber", capacity_max: 1, description: "Bombing 
 tie_bomb.owner = yann
 tie_bomb.photo = File.open(Rails.root.join("db/fixtures/ships/tie-bomber.jpg"))
 tie_bomb.save!
+
+t_47 = Ship.new(model: "T_47 Snow-speeder", capacity_max: 2, description: "Le T-47 Airspeeder, était originellement un petit speeder civil construit par Incom Corporation, mais l’Alliance Reebelle en acquit un certain nombre et les modifia grandement.", price_per_day: 160, captain: true, address: "Brest, France")
+t_47.owner = yann
+t_47.photo = File.open(Rails.root.join("db/fixtures/ships/T-47_Speeder.png"))
+t_47.save!
 
 puts "Create users"
 5.times do
