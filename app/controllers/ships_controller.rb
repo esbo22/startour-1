@@ -10,8 +10,8 @@ class ShipsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @ship = Ship.find(params[:id])
     @bookings = @ship.bookings
+    @ship = Ship.find(params[:id])
     @alert_message = "You are viewing the ship of #{@ship.owner.first_name}"
   end
 
