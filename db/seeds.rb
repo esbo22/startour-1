@@ -18,7 +18,9 @@ url_ship = "https://res.cloudinary.com/yannr/image/upload/v1573553018/x-wing_rrx
 url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573553210/darth_vader_mjxmvx.png"
 
 #DAPHNEE
-daph = User.new(avatar: "https://res.cloudinary.com/yannr/image/upload/v1573647304/IMG_7636_tc5qig.jpg", bio: "daph", email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
+daph_url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573647304/IMG_7636_tc5qig.jpg"
+daph = User.new(bio: "daph", email: "daph@example.com", password: "password", first_name: "Daphnée", last_name: "Duportal")
+daph.remote_avatar_url = daph_url_avatar
 daph.save!
 
 quad = Ship.new(model: "Pod-Racer", price_per_day: 60, capacity_max: 1, address: "Chez Daphnée, Caen")
@@ -27,7 +29,9 @@ quad.owner = daph
 quad.save!
 
 #JOHNNY
-johnny = User.new(avatar: "https://res.cloudinary.com/yannr/image/upload/v1573593123/vrcdelh5kzrwxo0akanm.jpg", bio: "johnny", email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
+johnny_url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573593123/vrcdelh5kzrwxo0akanm.jpg"
+johnny = User.new(bio: "johnny", email: "johnny@example.com", password: "password", first_name: "Johnny", last_name: "Girault")
+johnny.remote_avatar_url = johnny_url_avatar
 johnny.save!
 
 
@@ -37,7 +41,9 @@ x_wing_2.owner = johnny
 x_wing_2.save!
 
 #YANN
+yann_url_avatar = "https://res.cloudinary.com/yannr/image/upload/v1573648503/yann4_cz39zi.jpg"
 yann = User.new(avatar: "https://res.cloudinary.com/yannr/image/upload/v1573648503/yann4_cz39zi.jpg", bio: "yann",email: "yann@example.com", password: "password", first_name: "Yann", last_name: "Ropert")
+yann.remote_avatar_url = yann_url_avatar
 yann.save!
 
 tie_bomb = Ship.new(model: "Tie Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "Brest, France")
