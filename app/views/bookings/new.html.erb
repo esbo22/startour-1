@@ -1,0 +1,10 @@
+<h1> Book a ship</h1>
+
+
+<%= simple_form_for [@ship, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :captain %>
+  <%= f.submit %>
+<% end %>

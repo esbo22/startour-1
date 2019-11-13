@@ -23,7 +23,7 @@ class ShipsController < ApplicationController
     @ship = Ship.new(ship_params)
     @ship.user = current_user
     if @ship.save
-      redirect_to_ship_path(@ship)
+      redirect_to ship_path(@ship)
     else
       render :new
     end
