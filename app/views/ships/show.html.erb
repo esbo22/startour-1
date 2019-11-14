@@ -1,37 +1,36 @@
-<div id="ship-show-banner" class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ship.photo %>);">
+<div class="banner-show-ship" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ship.photo %>);">
+  <div class="banner-show-ship-name">
     <h1><%= @ship.model %></h1>
-    <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
+  </div>
+
 </div>
-<br>
-<br>
 
 <div class="container">
   <div class="row">
-    <div class ="photo-row">
       <div class="col-xs-12 col-sm-6">
-       <!--  <div class="card showmaincard"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path @ship.photo.path, height: 300, width: 400, crop: :fill %>')">
-        </div> -->
-      </div>
-
-      <div class="col-xs-12 col-sm-6">
-        <div class="wagoncard showmaincard form-grey">
-            <div class="wagoncard-category">
-              Ship Owner: <strong>  <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %> </strong>
+        <div class="card-ship-form-grey">
+            <div class="card-ship-category">
+              <div class="card-ship-category-owner">
+                <h2>Owner</h2>
+                <p><%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
+              </div>
+              <div class="card-ship-category-capacity">
+                <h2>Max Capacity</h2>
+                <p><%= @ship.capacity_max %></p>
+              </div>
+              <div class="card-ship-category-description">
+                <p><%= @ship.description %></p>
+              </div>
+              <div class="card-ship-category-credits">
+                <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
+              </div>
+              <div class="card-ship-category-address">
+                <p><%= @ship.address %></p>
+              </div>
             </div>
-            <br>
-            <div class="wagoncard-detail">
-              <p> Ship Description: <strong> <%= @ship.description %> </strong></p>
-              <p> Credits/day: <strong> <%= @ship.price_per_day %> </strong></p>
-              <p> Ship Address:<strong> <%= @ship.address %> </strong></p>
-              <p> Ship Model: <strong> <%= @ship.model %> </strong> </p>
-              <p> Max Capacity:<strong> <%= @ship.capacity_max %></strong></p>
-              <br>
-              <br>
+            <div class="card-ship-button">
+              <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
             </div>
-           <!--  </div>
-          <%#= cl_image_tag @ship.owner.photo.path, width: 50, height: 50 %>
-          </div> -->
         </div>
       </div>
       <div
@@ -39,8 +38,8 @@
         style="width: 100%;
         height: 375px;"
         data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-    </div>
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
   </div>
 </div>
