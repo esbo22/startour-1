@@ -77,6 +77,36 @@
   padding: 16px;
 }
 
+
+.card-ship-category-first{
+  flex-direction: row;
+  display: flex;
+}
+
+.card-ship-category-owner{
+  margin: 70px;
+}
+
+.card-ship-category-capacity{
+  margin: 70px;
+}
+
+.card-ship-category-description{
+  margin: 70px;
+}
+
+.card-ship-category-second{
+  flex-direction: row;
+  display: flex;
+}
+.card-ship-category-credits{
+  margin: 70px;
+}
+
+.card-ship-category-address{
+  margin: 70px;
+}
+
 .card-product-owner {
   overflow: hidden;
   height: 120px;

@@ -1,29 +1,19 @@
 
-#ship-show-banner  {
+.banner-show-ship {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 90px;
+  height: 300px;
 }
 
-#ship-show-banner h1 {
-  margin: 10;
+.banner-show-ship-name h1 {
   color: #4ee;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
   font-weight: bold;
   font-family: 'Varela Round', sans-serif;
-  text-align: center;
-  margin-left: 10px;
-}
-
-#ship-show-banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-
-}
-
-#ship-show-banner .btn {
-  margin-top: 20px;
+  display: flex;
+  position: relative;
+  top: 120px;
+  left: 500px;
 }
