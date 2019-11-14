@@ -25,10 +25,11 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   position: relative;
+  top: 10px;left: 4px;
   height: 100px;
 }
 
@@ -36,13 +37,12 @@
   font-size: smaller;
 }
 
-.card-trip p{
-}
-
 .card-trip-pricing{
   font-weight: bolder;
   color: black;
-  text-align: left;
+  text-align: right;
+  position: absolute;
+  bottom: 25px; right: 10px
 }
 
 .card-product {
