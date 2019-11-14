@@ -59,7 +59,7 @@ tie_bomb.owner = yann
 tie_bomb.photo = File.open(Rails.root.join("db/fixtures/ships/tie-bomber-removebg-preview.png"))
 tie_bomb.save!
 
-t_47 = Ship.new(model: "T-47 Snowspeeder", capacity_max: 2, description: "Le T-47 Airspeeder, était originellement un petit speeder civil construit par Incom Corporation, mais l’Alliance Reebelle en acquit un certain nombre et les modifia grandement.", price_per_day: 160, captain: true, address: "53 Rue le Guen de Kerangal, 35200 Rennes")
+t_47 = Ship.new(model: "T-47 Snowspeeder", capacity_max: 2, description: "Le T-47 Airspeeder, était originellement un petit speeder civil construit par Incom Corporation, mais l’Alliance Rebelle en acquit un certain nombre et les modifia grandement.", price_per_day: 160, captain: true, address: "53 Rue le Guen de Kerangal, 35200 Rennes")
 t_47.owner = yann
 t_47.photo = File.open(Rails.root.join("db/fixtures/ships/T-47_Speeder-removebg-preview.png"))
 t_47.save!
