@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form-grey">
+    <h3><%= current_user.first_name %>, update your ship</h3>
+
+    <%= simple_form_for [@owner, @ship] do |f| %>
+      <!--   <%#= f.association :model, collection: ["ARC170", "CR90", "Falcon Millenium", "N1 Starfighter", "Quadjumper", "T70", "T-4a Lambda", "T-47 Speeder", "Tie Fighter", "Tie Interceptor", "X-Wing" ] %> -->
+      <%= f.input :model %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :address %>
+      <%= f.input :captain %>
+      <%= f.input :price_per_day %>
+      <%= f.input :capacity_max %>
+      <%= f.input :description %>
+
+      <%= f.button :submit, "Update your ship", class: "btn btn-ghost" %>
+    <% end %>
+    <br>
+  </div>
+</div>
+
