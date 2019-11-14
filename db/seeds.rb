@@ -43,7 +43,7 @@ doug.save!
 
 puts "Create ships"
 
-quad = Ship.new(model: "Quadjumper", price_per_day: 60, capacity_max: 1, address: "
+quad = Ship.new(model: "Quadjumper", price_per_day: 60, description: "Cargo with four engines", capacity_max: 6, address: "
 21 Rue Pierre Gourdel, 35000 Rennes ")
 quad.photo = File.open(Rails.root.join("db/fixtures/ships/Quadjumper-removebg-preview.png"))
 quad.owner = daph
