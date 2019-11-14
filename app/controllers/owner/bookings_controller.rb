@@ -1,20 +1,20 @@
 class Owner::BookingsController < ApplicationController
+  before_action :set_booking, only: [:accept, :decline]
+
   def index
     @bookings = Booking.joins(:ship).where(ships: { owner: current_user })
   end
 
   def accept
-    @booking = Booking.new
     @booking.status = "confirmed"
     @booking.save
-    redirect_to owner_ships_path
+    redirect_to owner_bookings_path
   end
 
   def decline
-    @booking = Booking.new
     @booking.status = "canceled"
     @booking.save
-    redirect_to owner_ships_path
+    redirect_to owner_bookings_path
   end
 
   private
