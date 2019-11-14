@@ -9,24 +9,25 @@
   <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="card-ship-form-grey">
-            <div class="card-ship-category">
+            <div class="card-ship-category-first">
               <div class="card-ship-category-owner">
                 <h2>Owner</h2>
                 <p><%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
               </div>
               <div class="card-ship-category-capacity">
-                <h2>Max Capacity</h2>
-                <p><%= @ship.capacity_max %></p>
+                <h2>Max Capacity</h2> <p><%= @ship.capacity_max %></p>
               </div>
               <div class="card-ship-category-description">
                 <p><%= @ship.description %></p>
               </div>
+            </div>
+            <div class="card-ship-category-second">
               <div class="card-ship-category-credits">
-                <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
-              </div>
-              <div class="card-ship-category-address">
-                <p><%= @ship.address %></p>
-              </div>
+                  <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
+                </div>
+                <div class="card-ship-category-address">
+                  <p><%= @ship.address %></p>
+                </div>
             </div>
             <div class="card-ship-button">
               <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>

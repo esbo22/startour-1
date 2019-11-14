@@ -78,7 +78,7 @@
   padding: 16px;
 }
 
-.card-ship-category{
+.card-ship-category-first{
   flex-direction: row;
   display: flex;
 }
@@ -95,6 +95,10 @@
   margin: 70px;
 }
 
+.card-ship-category-second{
+  flex-direction: row;
+  display: flex;
+}
 .card-ship-category-credits{
   margin: 70px;
 }
