@@ -67,6 +67,7 @@ t_47.save!
 puts "Create bookings"
 
 Booking.create!(
+  captain: true,
   start_date: Date.today,
   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
   status: status.sample,
@@ -77,6 +78,7 @@ Booking.create!(
 )
 
 Booking.create!(
+  captain: false,
   start_date: Date.today,
   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
   status: status.sample,
