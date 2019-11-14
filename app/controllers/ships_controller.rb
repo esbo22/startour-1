@@ -13,6 +13,11 @@ class ShipsController < ApplicationController
     @bookings = @ship.bookings
     @ship = Ship.find(params[:id])
     @alert_message = "You are viewing the ship of #{@ship.owner.first_name}"
+
+    @markers = [{
+      lat: @ship.latitude,
+      lng: @ship.longitude
+    }]
   end
 
   def new
