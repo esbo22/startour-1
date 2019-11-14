@@ -5,7 +5,7 @@ class ShipsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @ships = Ship.all
+    @ships = Ship.where.not(owner: current_user)
   end
 
   def show
