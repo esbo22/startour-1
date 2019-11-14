@@ -3,7 +3,7 @@
     <div class="col-md-12 text-center" >
       <h1>StarTour</h1>
       <div class= "synopsis">
-        <h2>Choose a ship, travel around the galaxie, enjoy it!</h2>
+        <h2>Choose a ship, travel around the galaxie!</h2>
       </div>
     </div>
   </div>
@@ -20,10 +20,9 @@
                 <h2><%= ship.model %></h2>
                 <p><%= ship.address %></p>
               </div>
-              <h2 class="card-trip-pricing">
+              <div class="card-trip-pricing">
                 <p><%= ship.price_per_day %> credits</p>
-              </h2>
-              <img src="" class="card-trip-user avatar-bordered" />
+              </div>
             </div>
           </div>
         <% end %>
