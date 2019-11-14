@@ -6,13 +6,23 @@
           <h3 class="text-center">The following ships are booked</h3>
         <% else %>
           <% @bookings.each do |booking| %>
-            <h4><%= booking.ship.model %></h4>
-            <h4><%= booking.ship.photo %></h4>
-            <h4><%= booking.ship.price_per_day %></h4>
-            <h4><%= booking.ship.capacity_max %></h4>
+            <p><%= booking.ship.model %></p>
+            <p><%= booking.ship.photo %></p>
+            <p><%= booking.ship.price_per_day %></p>
+            <p><%= booking.ship.capacity_max %></p>
+            <% if booking.status == "pending" %>
+              <%= link_to 'decline', decline_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will not be  allowed to make requests. Proceed?' } %>
+              <%= link_to 'accept', accept_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will be activated. Proceed?' } %>
+            <% else %>
+              <p><%= booking.status %></p>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
  </div>
+
+
+<td>
+</td>
