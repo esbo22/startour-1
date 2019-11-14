@@ -1,8 +1,10 @@
 <div class="banner" style="background-image: url('https://www.rustica.fr/images/ciel-etoile-l750-h512.jpg');">
   <div class="banner-content">
-    <h1>StarTour</h1>
-    <h1>Rent your ship</h1>
     <div class="col-md-12 text-center" >
+      <h1>StarTour</h1>
+      <div class= "synopsis">
+        <h2>Choose a ship, travel around the galaxie!</h2>
+      </div>
     </div>
   </div>
 </div>
@@ -16,13 +18,11 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= ship.model %></h2>
-                <p>address:</p>
                 <p><%= ship.address %></p>
               </div>
-              <h2 class="card-trip-pricing">
-                <p><%= ship.price_per_day %> credits</p>
-              </h2>
-              <img src="" class="card-trip-user avatar-bordered" />
+              <div class="card-trip-pricing">
+                <p><%= ship.price_per_day %> <i class="fab fa-galactic-republic"></i></p>
+              </div>
             </div>
           </div>
         <% end %>
