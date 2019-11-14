@@ -1,15 +1,26 @@
 <div class= "container">
   <div class= "third-container">
     <div class= "form-grey">
-      <div class="col-12 col-md-8 offset-md-2">
-        <h1> Book a ship</h1>
+      <div class=" text-center col-12 col-md-8 offset-md-2">
+          <h2>You're booking the</h2>
+          <h1><%= @ship.model %></h1><br>
+
           <%= simple_form_for [@ship, @booking] do |f| %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <%= f.input :number_of_guests %>
-            <%= f.input :captain %>
-          <%= f.button :submit, "Create booking", class: "btn btn-ghost"%>
+            <%= f.input :start_date, label: 'When your journey will start?' %><br>
+
+            <%= f.input :end_date, label: 'When your journey will end?' %><br>
+
+            <%= f.input :number_of_guests, placeholder: "How many guests will you have?" %><br>
+
+            <%= f.input :captain, label: 'Do you want to travel with a captain?' %><br>
+
+            <h2><%= :total_price %> <i class="fab fa-galactic-republic"></i></h2><br>
+
+            <div class="text-center">
+              <%= f.button :submit, "Book this ship", class: "btn btn-ghost"%>
+            </div>
           <% end %>
+
       </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class ShipsController < ApplicationController
-  before_action :set_ship, only: [:show]
+  before_action :set_ship, only: [:show, :edit]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @ships = Ship.all
+    @ships = Ship.where.not(owner: current_user)
   end
 
   def show
@@ -32,6 +32,9 @@ class ShipsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   private

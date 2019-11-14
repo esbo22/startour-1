@@ -20,7 +20,6 @@ class BookingsController < ApplicationController
   end
 
   def index
-
   end
 
   private
