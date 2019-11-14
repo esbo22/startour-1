@@ -12,9 +12,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "My Ships", owner_ships_path, class: "btn btn-dark" %>
+          <%= link_to "All ships", root_path, class: "btn btn-dark" %>
           <%= link_to "My Bookings", owner_bookings_path, class: "btn btn-dark" %>
-          <%= link_to "All ships", root_path, class: "btn btn-dark mr-3" %>
+          <%= link_to "My Ships", owner_ships_path, class: "btn btn-dark mr-3" %>
         </li>
 
         <li class="nav-item dropdown">
