@@ -1,28 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
-      <div id="bookings">
-        <% if @bookings.empty? %>
-          <h3 class="text-center">The following ships are booked</h3>
-        <% else %>
-          <% @bookings.each do |booking| %>
-            <p><%= booking.ship.model %></p>
-            <p><%= booking.ship.photo %></p>
-            <p><%= booking.ship.price_per_day %></p>
-            <p><%= booking.ship.capacity_max %></p>
-            <% if booking.status == "pending" %>
-              <%= link_to 'decline', decline_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will not be  allowed to make requests. Proceed?' } %>
-              <%= link_to 'accept', accept_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will be activated. Proceed?' } %>
-            <% else %>
-              <p><%= booking.status %></p>
-            <% end %>
-          <% end %>
+      <% if @bookings.empty? %>
+        <h3>Noone has booked your ships</h3>
+      <% else %>
+        <% @bookings.each do |booking| %>
+          <div class="card-product-owner">
+            <div class="card-product-infos-owner">
+              <h2><%= booking.ship.model %></h2>
+              <p><%= booking.ship.photo %></p>
+              <p><%= booking.ship.price_per_day %></p>
+              <p><%= booking.ship.capacity_max %></p>
+              <% if booking.status == "pending" %>
+                <%= link_to 'decline', decline_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will not be  allowed to make requests. Proceed?'} , class: "btn-ghost-owner" %>
+                <%= link_to 'accept', accept_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will be activated. Proceed?'  } , class: "btn-ghost-owner" %>
+              <% else %>
+                <p><%= booking.status %></p>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
  </div>
-
-
-<td>
-</td>
