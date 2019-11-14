@@ -27,3 +27,4 @@ class Owner::BookingsController < ApplicationController
   #   params.require(:booking).permit(:start_date, :end_date, :number_of_guests, :captain)
   # end
 end
+

@@ -1,5 +1,18 @@
 <div class="container">
   <div class="row">
-
+    <div class="col-sm-8 offset-sm-2">
+      <div id="bookings">
+        <% if @bookings.empty? %>
+          <h3 class="text-center">The following ships are booked</h3>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <h4><%= booking.ship.model %></h4>
+            <h4><%= booking.ship.photo %></h4>
+            <h4><%= booking.ship.price_per_day %></h4>
+            <h4><%= booking.ship.capacity_max %></h4>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+ </div>
