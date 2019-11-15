@@ -1,19 +1,18 @@
 <div class="container">
-  <h1>My galactic garage</h1>
+  <div class= "title-my-ships">
+    <h1>My galactic garage</h1>
+  </div>
   <div class="row">
     <% @ships.each do |ship| %>
       <div class="col-12 col-md-6 col-lg-3">
         <%= link_to ship_path(ship) do %>
           <div class="card-trip link-card-trip">
             <%= cl_image_tag ship.photo, height: 300, width: 400, crop: :fill %>
-            <div class="card-trip-infos">
-              <div>
+            <div class="card-trip-infos-myships">
                 <h2><%= ship.model %></h2>
-                <%= link_to "Edit", edit_ship_path(ship), class: "btn btn-ghost" %>
-              </div>
-              <h2 class="card-trip-pricing">
+              <div class="card-trip-pricing-myships">
                 <p><%= ship.price_per_day %> <i class="fab fa-galactic-republic"></i></p>
-              </h2>
+              </div>
 <!--               <%#= image_tag ship.owner.avatar.url(:bright_face), height: 40, width: 40, crop: :fill, class: "card-trip-user avatar-bordered" %> -->
             </div>
           </div>
@@ -21,5 +20,7 @@
       </div>
     <% end %>
   </div>
+  <div class ="button-myships">
   <%= link_to "Add a new ship", new_ship_path, class: "btn btn-ghost" %>
+  </div>
 </div>
