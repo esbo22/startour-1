@@ -7,40 +7,32 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="card-ship-form-grey">
-            <div class="card-ship-category-first">
-              <div class="card-ship-category-owner">
-                <h2>Owner</h2>
-                <p><%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
-              </div>
-              <div class="card-ship-category-capacity">
-                <h2>Max Capacity</h2> <p><%= @ship.capacity_max %></p>
-              </div>
-              <div class="card-ship-category-description">
-                <p><%= @ship.description %></p>
-              </div>
-            </div>
-            <div class="card-ship-category-second">
-              <div class="card-ship-category-credits">
-                  <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
-                </div>
-                <div class="card-ship-category-address">
-                  <p><%= @ship.address %></p>
-                </div>
-            </div>
-            <div class="card-ship-button">
-              <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
-            </div>
+      <div class="col-12 col-lg-6">
+        <div class="card-ship-form-grey p-3">
+          <p><strong>Owner</strong>: <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
+          <p><strong><%= @ship.price_per_day %> </strong> <i class="fab fa-galactic-republic"> /day</i> </p>
+          <p> <i class="fas fa-users"></i> <%= @ship.capacity_max %></i></p>
+          <p><%= @ship.description %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= @ship.address %></p>
+          <div class="card-ship-button">
+            <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
+          </div>
         </div>
       </div>
-      <div
-        id="map"
-        style="width: 100%;
-        height: 375px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="col-12 col-lg-6">
+        <div class="p-3">
+          <div
+            id="map"
+            style="width: 100%;
+            height: 375px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
       </div>
-
+    </div>
   </div>
 </div>
+<!-- <div class="card-ship-button">
+  <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
+</div> -->
