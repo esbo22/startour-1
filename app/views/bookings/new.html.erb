@@ -6,15 +6,13 @@
           <h1><%= @ship.model %></h1><br>
 
           <%= simple_form_for [@ship, @booking] do |f| %>
-            <%= f.input :start_date, label: 'When your journey will start?' %><br>
+            <p><%= f.input :start_date, label: 'When your journey will start?' %></p>
 
-            <%= f.input :end_date, label: 'When your journey will end?' %><br>
+            <p><%= f.input :end_date, label: 'When your journey will end?' %></p>
 
-            <%= f.input :number_of_guests, placeholder: "How many guests will you have?" %><br>
+            <p><%= f.input :number_of_guests, placeholder: "How many guests will you have?" %></p>
 
-            <%= f.input :captain, label: 'Do you want to travel with a captain?' %><br>
-
-            <h2><%= :total_price %> <i class="fab fa-galactic-republic"></i></h2><br>
+            <p><%= f.input :captain, label: 'Do you want to travel with a captain? (+50)' %></p><br>
 
             <div class="text-center">
               <%= f.button :submit, "Book this ship", class: "btn btn-ghost"%>
