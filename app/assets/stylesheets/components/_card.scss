@@ -44,6 +44,26 @@
   bottom: 25px; right: 10px
 }
 
+
+.card-trip-infos-myships{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 20px;left: 4px;
+  height: 100px;
+  font-size: 20px;
+}
+.card-trip-pricing-myships p {
+  margin: 36px;
+  font-weight: bolder;
+  color: black;
+  text-align: right;
+  position: absolute;
+  left: 90px;
+  font-size: 15px;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
