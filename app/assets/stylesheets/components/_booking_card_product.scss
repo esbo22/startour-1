@@ -1,0 +1,53 @@
+
+.card-product {
+  p {
+    font-size: 16px;
+  }
+
+  .card-product-infos .booking-user-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    opacity: 1;
+  }
+
+  .model-name {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    color: #4ee;
+  }
+
+  .card-product-status-infos {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .card-product-dates-and-price {
+    flex: 0 0 40%;
+    padding-left: 160px;
+  }
+
+  .total_price {
+    font-size: 1.25rem;
+  }
+
+  .btn-accept {
+    border-color: green;
+    color: green;
+    transition: .4s;
+
+    &:hover {
+      border-color: #4ee;
+      color: #4ee;
+    }
+  }
+}
+
