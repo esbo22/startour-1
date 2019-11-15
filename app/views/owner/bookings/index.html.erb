@@ -4,23 +4,24 @@
       <% if @bookings.empty? %>
         <h3>Noone has booked your ships</h3>
       <% else %>
-        <% @bookings.each do |booking| %>
           <div class="card-product-owner">
             <div class="card-product-infos-owner">
-              <h2><%= booking.ship.model %></h2>
-              <p><%= booking.ship.photo %></p>
-              <p><%= booking.ship.price_per_day %></p>
-              <p><%= booking.ship.capacity_max %></p>
-              <% if booking.status == "pending" %>
-                <%= link_to 'decline', decline_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will not be  allowed to make requests. Proceed?'} , class: "btn-ghost-owner" %>
-                <%= link_to 'accept', accept_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will be activated. Proceed?'  } , class: "btn-ghost-owner" %>
-              <% else %>
-                <p><%= booking.status %></p>
+              <% @bookings.each do |booking| %>
+                <h2><%= booking.ship.model %></h2>
+                <p><%= cl_image_tag booking.ship.photo, height: 100, width: 150, crop: :fill %></p>
+                <p><%= booking.ship.price_per_day %>/day <i class="fab fa-galactic-republic"></i></p>
+                <p><%= booking.ship.capacity_max %> <i class="fas fa-users"></i></p>
+                <p><%= cl_image_tag booking.user.avatar, height: 30, width: 30, gravity: :face %></p>
+                  <% if booking.status == "pending" %>
+                    <%= link_to 'decline', decline_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will not be  allowed to make requests. Proceed?' }, class: "btn-ghost-owner" %>
+                    <%= link_to 'accept', accept_owner_booking_path(booking), method: :patch, data: { confirm: 'This booking will be activated. Proceed?' }, class: "btn-ghost-owner" %>
+                  <% else %>
+                    <p><%= booking.status %></p>
+                  <% end %>
               <% end %>
             </div>
           </div>
-        <% end %>
       <% end %>
     </div>
   </div>
- </div>
+</div>
