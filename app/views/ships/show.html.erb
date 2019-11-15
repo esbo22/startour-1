@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12">
         <div class="card-ship-form-grey">
             <div class="card-ship-category-first">
               <div class="card-ship-category-owner">
@@ -17,17 +17,17 @@
               <div class="card-ship-category-capacity">
                 <h2>Max Capacity</h2> <p><%= @ship.capacity_max %></p>
               </div>
-              <div class="card-ship-category-description">
-                <p><%= @ship.description %></p>
+              <div class="card-ship-category-credits">
+                  <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
               </div>
             </div>
             <div class="card-ship-category-second">
-              <div class="card-ship-category-credits">
-                  <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
-                </div>
-                <div class="card-ship-category-address">
+              <div class="card-ship-category-description">
+                <p><%= @ship.description %></p>
+              </div>
+              <div class="card-ship-category-address">
                   <p><%= @ship.address %></p>
-                </div>
+              </div>
             </div>
             <div class="card-ship-button">
               <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
@@ -41,6 +41,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
+    </div>
   </div>
 </div>

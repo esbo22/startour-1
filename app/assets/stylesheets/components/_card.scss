@@ -103,8 +103,12 @@
   display: flex;
 }
 
+.card-ship-category-second{
+  flex-direction: row;
+  display: flex;
+}
 .card-ship-category-owner{
-  margin: 70px;
+  margin: 30px;
 }
 
 .card-ship-category-capacity{
@@ -115,10 +119,7 @@
   margin: 70px;
 }
 
-.card-ship-category-second{
-  flex-direction: row;
-  display: flex;
-}
+
 .card-ship-category-credits{
   margin: 70px;
 }
