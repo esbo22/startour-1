@@ -9,9 +9,9 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroy all instances"
-Booking.destroy_all if Rails.env.development?
-Ship.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Booking.destroy_all
+User.destroy_all
+Ship.destroy_all
 
 status = ["pending", "confirmed", "canceled"]
 
