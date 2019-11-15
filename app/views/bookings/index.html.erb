@@ -1,22 +1,47 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8 offset-sm-2">
-      <% if @bookings.empty? %>
-          <h3>You have booked any ships yet</h3>
-      <% else %>
-          <div class="card-product-owner">
-            <div class="card-product-infos-owner">
-              <% @bookings.each do |booking| %>
-                <h2><%= booking.ship.model %></h2>
-                <p><%= cl_image_tag booking.ship.photo, height: 100, width: 150, crop: :fill %></p>
-                <p><%= booking.total_price %> <i class="fab fa-galactic-republic"></i></p>
-                <p><%= booking.ship.capacity_max %> <i class="fas fa-users"></i></p>
-                <p><%= cl_image_tag booking.ship.owner.avatar, height: 30, width: 30, gravity: :face %></p>
-                <p><%= booking.status %></p>
-              <% end %>
+  <div class="pt-3">
+    <% if @bookings.empty? %>
+        <h3>You have booked any ships yet</h3>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <div class="card-product position-relative">
+          <%= cl_image_tag booking.ship.photo, height: 100, width: 150, crop: :fill %>
+          <h2 class="model-name"><%= booking.ship.model %></h2>
+          <div class="card-product-infos">
+            <div class="user-infos d-flex justify-content-center align-items-center mb-2">
+              <%= cl_image_tag booking.ship.owner.avatar, height: 50, width: 50, gravity: :face, class: 'booking-user-avatar' %>
+              <p class="ml-2 mt-0">
+                <%= booking.ship.owner.first_name %> <%= booking.ship.owner.last_name %>
+                <% if booking.number_of_guests > 0 %>
+                  <br>
+                  <span> and <%= booking.number_of_guests %> more.</span>
+                <% end %>
+                </p>
             </div>
+            <% if !booking.captain %>
+              <p class="pl-5 text-danger"><strong>A captain is needed</strong></p>
+            <% else %>
+              <p class="pl-5 font-weight-lighter font-italic"><small>No need for captain</small></p>
+            <% end %>
           </div>
+          <div class="card-product-dates-and-price">
+            <p>
+              <span class="font-weight-lighter">from</span>
+              <strong class="mx-1"><%= booking.start_date.strftime("%d/%m/%y") %></strong>
+              <span class="font-weight-lighter">to</span>
+              <strong class="mx-1"><%= booking.end_date.strftime("%d/%m/%y") %></strong>
+            </p>
+            <p>
+              <span class="font-weight-lighter">for</span>
+              <strong class="total_price"><%= booking.total_price %></strong>
+              <i class="fab fa-galactic-republic"></i>
+            </p>
+          </div>
+          <div class="card-product-status-infos">
+            <p class="m-0 <%= booking_status_class(booking) %>"><%= booking.status %></p>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

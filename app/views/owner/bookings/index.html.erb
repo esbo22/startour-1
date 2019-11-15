@@ -38,7 +38,6 @@
             </p>
           </div>
           <div class="card-product-status-infos">
-            <% console %>
             <% if booking.status == "pending" %>
               <%= link_to 'accept', accept_owner_booking_path(booking),
                                     method: :patch,
