@@ -11,11 +11,10 @@
         <div class="card-ship-form-grey p-3">
           <p><strong>Owner</strong></p>
           <p><%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
-          <p><strong>Max Capacity</strong></p>
-          <p><%= @ship.capacity_max %></p>
-          <p><%= @ship.price_per_day %> <i class="fab fa-galactic-republic"> /day</i> </p>
+          <p><strong><%= @ship.price_per_day %> </strong> <i class="fab fa-galactic-republic"> /day</i> </p>
+          <p> <i class="fas fa-users"></i> <%= @ship.capacity_max %></i></p>
           <p><%= @ship.description %></p>
-          <p><%= @ship.address %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= @ship.address %></p>
           <div class="card-ship-button">
             <%= link_to "Book this ship", new_ship_booking_path(@ship), class: "btn btn-ghost" %>
           </div>
