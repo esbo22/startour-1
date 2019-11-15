@@ -9,8 +9,7 @@
   <div class="row">
       <div class="col-12 col-lg-6">
         <div class="card-ship-form-grey p-3">
-          <p><strong>Owner</strong></p>
-          <p><%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
+          <p><strong>Owner</strong>: <%= @ship.owner.first_name + ' ' + @ship.owner.last_name %></p>
           <p><strong><%= @ship.price_per_day %> </strong> <i class="fab fa-galactic-republic"> /day</i> </p>
           <p> <i class="fas fa-users"></i> <%= @ship.capacity_max %></i></p>
           <p><%= @ship.description %></p>
