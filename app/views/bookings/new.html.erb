@@ -12,7 +12,17 @@
 
             <p><%= f.input :number_of_guests, placeholder: "How many guests will you have?" %></p>
 
-            <p><%= f.input :captain, label: 'Do you want to travel with a captain? (+50)' %></p><br>
+            <p class="custom-control custom-switch">
+              <%#= f.input :captain, input: { class: 'custom-control-input' }, wrapper_html: { class: 'custom-control custom-switch'}, label: false %>
+              <input type="checkbox" class="custom-control-input" id="booking_captain" name="booking[captain]">
+              <label class="custom-control-label" for="booking_captain">Do you want to travel with a captain? (+50)</label>
+            </p>
+
+            <br>
+
+             <!--  <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+              </div> -->
 
             <div class="text-center">
               <%= f.button :submit, "Book this ship", class: "btn btn-ghost"%>
