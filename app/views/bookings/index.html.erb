@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <% if @bookings.empty? %>
+          <h3>You have booked any ships yet</h3>
+      <% else %>
+          <div class="card-product-owner">
+            <div class="card-product-infos-owner">
+              <% @bookings.each do |booking| %>
+                <h2><%= booking.ship.model %></h2>
+                <p><%= cl_image_tag booking.ship.photo, height: 100, width: 150, crop: :fill %></p>
+                <p><%= booking.total_price %> <i class="fab fa-galactic-republic"></i></p>
+                <p><%= booking.ship.capacity_max %> <i class="fas fa-users"></i></p>
+                <p><%= cl_image_tag booking.ship.owner.avatar, height: 30, width: 30, gravity: :face %></p>
+                <p><%= booking.status %></p>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
