@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.set_total_price!
 
     if @booking.save
-      redirect_to ship_path(@ship)
+      redirect_to bookings_path
     else
       render :new
     end

@@ -49,32 +49,32 @@ quad.photo = File.open(Rails.root.join("db/fixtures/ships/Quadjumper.jpeg"))
 quad.owner = daph
 quad.save!
 
-x_wing_2 = Ship.new(model: "X-Wing", capacity_max: 1, description: "Rebellion starfighter", price_per_day: 100, captain: true, address: "32 Rue de la Palestine, 35000 Rennes")
+x_wing_2 = Ship.new(model: "X-Wing", capacity_max: 1, description: "Rebellion starfighter", price_per_day: 100, address: "32 Rue de la Palestine, 35000 Rennes")
 x_wing_2.photo = File.open(Rails.root.join("db/fixtures/ships/x-wing.jpg"))
 x_wing_2.owner = johnny
 x_wing_2.save!
 
-tie_bomb = Ship.new(model: "TIE Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, captain: true, address: "16 Boulevard Charles Péguy, 35700 Rennes")
+tie_bomb = Ship.new(model: "TIE Bomber", capacity_max: 1, description: "Bombing variant of the TIE line used by the Galactic Empire", price_per_day: 120, address: "16 Boulevard Charles Péguy, 35700 Rennes")
 tie_bomb.owner = yann
 tie_bomb.photo = File.open(Rails.root.join("db/fixtures/ships/tie-bomber.png"))
 tie_bomb.save!
 
-t_47 = Ship.new(model: "T-47 Snowspeeder", capacity_max: 2, description: "Le T-47 Airspeeder, était originellement un petit speeder civil construit par Incom Corporation, mais l’Alliance Rebelle en acquit un certain nombre et les modifia grandement.", price_per_day: 160, captain: true, address: "53 Rue le Guen de Kerangal, 35200 Rennes")
+t_47 = Ship.new(model: "T-47 Snowspeeder", capacity_max: 2, description: "Le T-47 Airspeeder, était originellement un petit speeder civil construit par Incom Corporation, mais l’Alliance Rebelle en acquit un certain nombre et les modifia grandement.", price_per_day: 160, address: "53 Rue le Guen de Kerangal, 35200 Rennes")
 t_47.owner = yann
 t_47.photo = File.open(Rails.root.join("db/fixtures/ships/T-47_Speeder.png"))
 t_47.save!
 
-cr90 = Ship.new(model: "CR90", capacity_max: 30, description: "Construit par la Corporation Technique Corellienne, la Corvette CR-90 est à l'image des autres vaisseaux de la marque : rapide, bien armée, de conception robuste, et totalement modulaire.", price_per_day: 460, captain: true, address: "1 Rue de la 87ème Division ďInfanterie Territoriale, 35000 Rennes")
+cr90 = Ship.new(model: "CR90", capacity_max: 30, description: "Construit par la Corporation Technique Corellienne, la Corvette CR-90 est à l'image des autres vaisseaux de la marque : rapide, bien armée, de conception robuste, et totalement modulaire.", price_per_day: 460, address: "1 Rue de la 87ème Division ďInfanterie Territoriale, 35000 Rennes")
 cr90.owner = doug
 cr90.photo = File.open(Rails.root.join("db/fixtures/ships/cr90.jpg"))
 cr90.save!
 
-tie_fighter = Ship.new(model: "TIE Fighter", capacity_max: 1, description: "Propulsé par des moteurs à ions jumeaux et pouvant atteindre 1.600 km/h, le TIE Fighter v1 dispose de deux canons laser et d'un lance-missiles.", price_per_day: 60, captain: false, address: "3 Avenue Henri Fréville, 35200 Rennes")
+tie_fighter = Ship.new(model: "TIE Fighter", capacity_max: 1, description: "Propulsé par des moteurs à ions jumeaux et pouvant atteindre 1.600 km/h, le TIE Fighter v1 dispose de deux canons laser et d'un lance-missiles.", price_per_day: 60, address: "3 Avenue Henri Fréville, 35200 Rennes")
 tie_fighter.owner = yann
 tie_fighter.photo = File.open(Rails.root.join("db/fixtures/ships/TieFighter.jpg"))
 tie_fighter.save!
 
-arc170 = Ship.new(captain: false, model: "ARC-170", price_per_day: 75, description: "L'ARC-170, ou officiellement Chasseur de Reconnaissance Agressif, est un appareil aux courbes bombées fabriqué par les industries Incom et Subpro pour le compte de la République durant la Guerre des Clones.", capacity_max: 3, address: "2 Allée de La Morinais, 35136 Saint-Jacques-de-la-Lande ")
+arc170 = Ship.new(model: "ARC-170", price_per_day: 75, description: "L'ARC-170, ou officiellement Chasseur de Reconnaissance Agressif, est un appareil aux courbes bombées fabriqué par les industries Incom et Subpro pour le compte de la République durant la Guerre des Clones.", capacity_max: 3, address: "2 Allée de La Morinais, 35136 Saint-Jacques-de-la-Lande ")
 arc170.photo = File.open(Rails.root.join("db/fixtures/ships/ARC170.jpg"))
 arc170.owner = daph
 arc170.save!
